@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-bg-color: rgb(245, 238, 230);
+  --green: #54b435;
+  --red: #ff8080;
+  --yellow: #fdffae;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--primary-bg-color);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
