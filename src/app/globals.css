@@ -2,11 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+.f-center {
+  display: flex;
+  align-items: center;
+}
+
+.border-black {
+  border: 1px solid rgb(0, 0, 0);
+}
+
 :root {
   --primary-bg-color: rgb(245, 238, 230);
-  --green: #54b435;
-  --red: #ff8080;
-  --yellow: #fdffae;
+  --primary-bg-color-dark: rgb(225, 218, 210);
+
+  --green: rgb(100, 200, 80);
+  --light-green: rgb(130, 230, 100);
+
+  --red: rgb(255, 128, 128);
+  --light-red: rgb(255, 158, 158);
+
+  --yellow: rgb(240, 235, 140);
+  --light-yellow: rgb(255, 255, 200);
+
+  --modal-bg-color: rgba(235, 228, 230, 1);
+
+  --button-primary: rgb(58, 166, 185);
+  --button-primary-dark: rgb(45, 150, 170);
+
+  --button-danger: rgb(216, 63, 49);
+  --button-danger-dark: rgb(200, 50, 35);
+
+  --button-info: rgb(246, 241, 147);
+  --button-info-dark: rgb(230, 220, 130);
+
+  --button-disabled: rgb(115, 144, 114);
+
+  --input-height: 2.25rem;
+  --border-radius: 8px;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -3,6 +3,8 @@ const EXPENSE_SCHEMA = {
   note: "Indore to Dewas",
   amount: 200,
   expense_date: "UTC Epoch",
+  expense_field: "id of expense field",
+  budget_id: "id of budget",
 };
 
 const EXPENSE_TYPE_SCHEMA = {

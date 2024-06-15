@@ -1,7 +1,21 @@
 .wrapper {
   margin: 4px;
   padding: 8px;
-  border: 1px solid black;
   width: max-content;
   border-radius: 8px;
+}
+
+.input {
+  background-color: var(--primary-bg-color-dark);
+  outline: none;
+  border-radius: 8px;
+  padding: 6px;
+  font-weight: 500;
+  margin: 0 8px;
+  height: var(--input-height);
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

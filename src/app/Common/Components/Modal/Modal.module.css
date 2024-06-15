@@ -1,0 +1,25 @@
+.wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--modal-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentWrapper {
+  background-color: var(--primary-bg-color);
+  height: max-content;
+  width: max-content;
+  box-shadow: 0 0 8px 8px var(--primary-bg-color-dark);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.headerWrapper {
+  justify-content: space-between;
+  margin: 0 12px;
+}

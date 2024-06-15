@@ -4,4 +4,12 @@ export const messages = {
   selectDuration: "Select Duration",
   selectMonth: "Select Month",
   selectYear: "Select Year",
+  rupeeText: "₹",
+  applicableFor: "Applicable For",
+  createNewBudget: "Create New Budget",
+  closeText: "Close",
+  closeIcon: "X",
+  createText: "Create",
+  allocatedForExpenses: "Allocated For Expenses : ",
+  unallocatedSavings: "Unallocated / Savings : ",
 };

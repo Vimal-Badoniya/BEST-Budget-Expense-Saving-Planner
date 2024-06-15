@@ -1,8 +1,9 @@
 "use client";
+import styles from "./SingleSelectDropdown.module.css";
 
 export default function SingleSelectDropdown({
   id = "singleSelectDropdown",
-  label = "Select One",
+  label = "",
   options = [{ label: "Select One", value: "" }],
   defaultSelected = "",
   onSelect = () => {},
@@ -11,6 +12,7 @@ export default function SingleSelectDropdown({
     <div>
       <label htmlFor={id}>{label}</label>
       <select
+        className={styles.dropdown}
         name={id}
         id={id}
         defaultValue={defaultSelected}

@@ -1,0 +1,35 @@
+.button {
+  cursor: pointer;
+  margin: 0 4px;
+  padding: 0 6px;
+  border-radius: 8px;
+  outline: none;
+  color: aliceblue;
+}
+
+.primaryButton {
+  background-color: var(--button-primary);
+}
+.primaryButton:hover {
+  background-color: var(--button-primary-dark);
+}
+
+.dangerButton {
+  background-color: var(--button-danger);
+}
+.dangerButton:hover {
+  background-color: var(--button-danger-dark);
+}
+
+.infoButton {
+  background-color: var(--button-info);
+}
+.infoButton:hover {
+  background-color: var(--button-info-dark);
+}
+
+.disabledButton,
+.disabledButton:hover {
+  background-color: var(--button-disabled);
+  cursor: not-allowed;
+}
