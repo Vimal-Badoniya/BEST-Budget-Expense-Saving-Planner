@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import Button from "../Common/Components/Button/Button";
+import CreateNewBudget from "./Components/CreateNewBudget/CreateNewBudget";
 import { messages } from "../Constants/Messages/messages";
-import CreateNewBudgetModal from "./Modal/CreateNewBudgetModal";
 
 export default function DashboardPage() {
   const [showCreateModal, setShowCreateModal] = useState(false);
   return (
     <>
+      <CreateNewBudget />
       <Button
         type="PRIMARY"
         label={messages.createNewBudget}
@@ -15,9 +16,6 @@ export default function DashboardPage() {
           setShowCreateModal(true);
         }}
       />
-      {showCreateModal && (
-        <CreateNewBudgetModal setShowCreateModal={setShowCreateModal} />
-      )}
     </>
   );
 }
