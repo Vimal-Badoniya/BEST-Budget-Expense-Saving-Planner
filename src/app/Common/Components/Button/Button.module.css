@@ -4,7 +4,9 @@
   padding: 0 6px;
   border-radius: 8px;
   outline: none;
-  color: aliceblue;
+  color: var(--button-text-color);
+  background-color: var(--button-primary);
+  height: 2.5rem;
 }
 
 .primaryButton {

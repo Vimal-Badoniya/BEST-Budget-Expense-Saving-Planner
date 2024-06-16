@@ -12,4 +12,8 @@ export const messages = {
   createText: "Create",
   allocatedForExpenses: "Allocated For Expenses : ",
   unallocatedSavings: "Unallocated / Savings : ",
+  addTextWithSign: "+Add",
+  expenseType: "Expense Type",
+  expenseTypePlaceholderText: "Fuel, Rent, Grocery, Fees",
+  amountText: "Amount",
 };

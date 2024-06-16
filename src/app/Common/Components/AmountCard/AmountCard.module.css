@@ -1,0 +1,39 @@
+.allotmentWrapper {
+  border-radius: 8px;
+  margin-right: 12px;
+  padding: 0 8px;
+}
+
+.percent {
+  border-radius: 8px;
+  background-color: var(--yellow);
+  padding: 2px 8px;
+}
+
+.amount {
+  margin: 8px;
+}
+
+.info {
+  background-color: var(--light-yellow);
+}
+
+.success {
+  background-color: var(--light-green);
+}
+
+.danger {
+  background-color: var(--light-red);
+}
+
+.percentInfo {
+  background-color: var(--yellow);
+}
+
+.percentDanger {
+  background-color: var(--red);
+}
+
+.percentSuccess {
+  background-color: var(--green);
+}

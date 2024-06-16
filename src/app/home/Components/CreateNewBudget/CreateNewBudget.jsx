@@ -5,70 +5,63 @@ import SingleSelectDropdown from "@/app/Common/Components/SingleSelectDropdown/S
 import { MONTH_LIST, YEAR_LIST } from "@/app/Constants/Constants/Constant";
 import { messages } from "@/app/Constants/Messages/messages";
 import { useState } from "react";
-import styles from "./CreateNewBudget.module.css";
+import Button from "@/app/Common/Components/Button/Button";
+import { useDispatch } from "react-redux";
+import { addNewBudget } from "../../../../redux/Slices/AddBudgetSlice";
 
 export default function CreateNewBudget() {
-  const [budgetData, setBudgetData] = useState(null);
-  function onMonthSelect(e) {
-    console.log(e.target.value);
+  const [isBasicDetailsFilled, setIsBasicDetailsFilled] = useState(false);
+  const dispatch = useDispatch();
+
+  function budgetBasicDetailsSubmit(e) {
+    e.preventDefault();
+    // console.log(e);
+    setIsBasicDetailsFilled(true);
+
+    const payload = {
+      name: e.target[0].value,
+      month: e.target[1].value,
+      year: e.target[2].value,
+      total_amount: e.target[3].value,
+    };
+    dispatch(addNewBudget(payload));
   }
-  function onYearSelect(e) {
-    console.log(e.target.value);
-  }
-  function validateUserInputs() {
-    if (!budgetData) {
-      return false;
-    }
-    if (budgetData?.name) {
-      return true;
-    }
-  }
-  function onCreateNewExpense() {
-    const isInputValid = validateUserInputs();
-    console.log(isInputValid);
-  }
+
   return (
-    <div>
-      <div className="f-center">
-        <Input
-          id="budgetName"
-          type="text"
-          label={messages.budgetName}
-          onValueChange={(e) => {
-            console.log(e);
-          }}
-        />
-        <SingleSelectDropdown
-          id="budgetMonth"
-          label={messages.applicableFor}
-          options={MONTH_LIST}
-          onSelect={onMonthSelect}
-          defaultSelected={new Date().getMonth()}
-        />
-        <SingleSelectDropdown
-          id="budgetYear"
-          options={YEAR_LIST}
-          onSelect={onYearSelect}
-          defaultSelected={new Date().getFullYear()}
-        />
-      </div>
-      <Input id="budgetAmount" type="number" label={messages.totalAmount} />
-      <div className={styles.container}>
-        <div
-          className={`${styles.allotmentWrapper} ${styles.allocatedBgColor} f-center`}
-        >
-          <h4>{messages.allocatedForExpenses}</h4>
-          <h4 className={styles.allocatedAmount}> {messages.rupeeText}2000</h4>
-          <h4 className={styles.allocatedPercent}>32%</h4>
+    <>
+      <form onSubmit={budgetBasicDetailsSubmit}>
+        <div className="f-center">
+          <Input
+            id="budgetName"
+            type="text"
+            label={messages.budgetName}
+            isRequired
+          />
+          <SingleSelectDropdown
+            id="budgetMonth"
+            label={messages.applicableFor}
+            options={MONTH_LIST}
+            defaultSelected={new Date().getMonth()}
+          />
+          <SingleSelectDropdown
+            id="budgetYear"
+            options={YEAR_LIST}
+            defaultSelected={new Date().getFullYear()}
+          />
         </div>
-        <div
-          className={`f-center ${styles.allotmentWrapper} ${styles.unAllocatedBgColor}`}
-        >
-          <h4>{messages.unallocatedSavings}</h4>
-          <h4 className={styles.allocatedAmount}> {messages.rupeeText}8000</h4>
-          <h4 className={styles.unAllocatedPercent}>52%</h4>
+        <div className="f-center">
+          <Input
+            id="budgetAmount"
+            type="number"
+            label={messages.totalAmount}
+            isRequired
+          />
+          <Button
+            type="submit"
+            label={isBasicDetailsFilled ? "Update" : "Proceed"}
+          />
         </div>
-      </div>
-    </div>
+      </form>
+    </>
   );
 }

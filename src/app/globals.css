@@ -11,6 +11,10 @@
   border: 1px solid rgb(0, 0, 0);
 }
 
+.cp {
+  cursor: pointer;
+}
+
 :root {
   --primary-bg-color: rgb(245, 238, 230);
   --primary-bg-color-dark: rgb(225, 218, 210);
@@ -28,6 +32,7 @@
 
   --button-primary: rgb(58, 166, 185);
   --button-primary-dark: rgb(45, 150, 170);
+  --button-text-color: aliceblue;
 
   --button-danger: rgb(216, 63, 49);
   --button-danger-dark: rgb(200, 50, 35);

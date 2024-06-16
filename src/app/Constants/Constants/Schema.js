@@ -1,32 +1,32 @@
-const EXPENSE_SCHEMA = {
+const DEFAULT_EXPENSE_SCHEMA = {
   uid: "e01",
   note: "Indore to Dewas",
-  amount: 200,
+  amount: 0,
   expense_date: "UTC Epoch",
   expense_field: "id of expense field",
   budget_id: "id of budget",
 };
 
-const EXPENSE_TYPE_SCHEMA = {
+const DEFAULT_EXPENSE_TYPE_SCHEMA = {
   uid: "et01",
-  name: "Fuel",
-  total_limit: 1000,
-  spent_amount: 600,
-  remaining_amount: 500,
-  expenses: [],
+  name: "", //FUEL / RENT / BILL / UTILITY
+  total_limit: 0,
+  spent_amount: 0,
+  remaining_amount: 0,
+  expenses: [DEFAULT_EXPENSE_SCHEMA],
 };
 
-const BUDGET_SCHEMA = {
-  name: "",
+const DEFAULT_BUDGET_SCHEMA = {
   uid: "b01",
-  total_amount: 5000,
-  total_spent: 1000,
-  total_remaining: 4000,
+  name: "",
+  total_amount: 0,
+  total_spent: 0,
+  total_remaining: 0,
   applicable_for: "MONTH", //"MONTH" "YEAR" "CUSTOM"
   duration_from: "UTC Epoch",
   duration_to: "UTC Epoch",
   month: 0,
   year: 2024,
   total_saving: 0,
-  expense_types: [],
+  expense_types: [DEFAULT_EXPENSE_TYPE_SCHEMA],
 };
